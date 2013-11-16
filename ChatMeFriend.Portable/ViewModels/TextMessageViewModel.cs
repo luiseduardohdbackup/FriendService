@@ -1,5 +1,5 @@
 using System;
-using Cirrious.CrossCore;
+using Cirrious.MvvmCross.Plugins.Sqlite;
 using Cirrious.MvvmCross.ViewModels;
 
 namespace ChatMeFriend.Portable.ViewModels
@@ -7,7 +7,12 @@ namespace ChatMeFriend.Portable.ViewModels
     public class TextMessageViewModel 
 		: MvxViewModel
     {
-        private string text;
+
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
+
+        private string text = String.Empty;
 
         public string Text
         {
@@ -15,14 +20,20 @@ namespace ChatMeFriend.Portable.ViewModels
             set { text = value; }
         }
 
-        private DateTime time;
+        private DateTime time = DateTime.UtcNow;
         public DateTime Time
         {
             get { return time; }
             set { time = value; }
         }
 
-        private string pictureFileName;
+        [Ignore]
+        public string TimeDisplay
+        {
+            get { return String.Format("{0:d/M/yyyy HH:mm:ss}", time.ToLocalTime()); }
+        }
+
+        private string pictureFileName = string.Empty;
 
         public string PictureFileName
         {

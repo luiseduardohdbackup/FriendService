@@ -30,7 +30,7 @@ namespace ChatMeFriend.Portable.Helpers
         private const string UserPictureDefault = "";
         private const string UserLocationKey = "userlocation";
         private const string UserLocationDefault = "Cambridge";
-        private const GenderType UserGenderDefault =GenderType.Female;
+        private const int UserGenderDefault = (int)GenderType.Female;
         private const string UserGenderKey = "usergender";
         private const string PersonalityNameKey = "personalityname";
         private const string PersonalityNameDefault = "";
@@ -80,6 +80,21 @@ namespace ChatMeFriend.Portable.Helpers
             {
                 //if value has changed then save it!
                 if (AppSettings.AddOrUpdateValue(UserPictureKey, value))
+                    AppSettings.Save();
+            }
+        }
+
+
+        public static GenderType UserGender
+        {
+            get
+            {
+                return (GenderType)AppSettings.GetValueOrDefault(UserGenderKey, UserGenderDefault);
+            }
+            set
+            {
+                //if value has changed then save it!
+                if (AppSettings.AddOrUpdateValue(UserGenderKey, (int)value))
                     AppSettings.Save();
             }
         }

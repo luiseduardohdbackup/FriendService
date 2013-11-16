@@ -1,5 +1,4 @@
-﻿using ceton.mvx.plugins.settings;
-using ChatMeFriend.Portable.Helpers;
+﻿using ChatMeFriend.Portable.Helpers;
 using Cirrious.MvvmCross.ViewModels;
 
 namespace ChatMeFriend.Portable.ViewModels

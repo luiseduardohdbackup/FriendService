@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ChatMeFriend.Portable.Services;
+﻿using ChatMeFriend.Portable.Services;
 using ChatMeFriend.Portable.ViewModels;
 
 namespace ChatMeFriend.WindowsPhone.ViewModels
@@ -13,13 +8,13 @@ namespace ChatMeFriend.WindowsPhone.ViewModels
 
         public ChatViewModel MainPage
         {
-            get { return new ChatViewModel(new TextService(new MaleFriendService())); }
+            get { return new ChatViewModel(new TextService(new MaleFriendService(), new DataService(null))); }
         }
 
 
         public SetupViewModel EditFriend
         {
-            get { return new SetupViewModel(); }
+            get { return new SetupViewModel(new MaleFriendService()); }
         }
     }
 }

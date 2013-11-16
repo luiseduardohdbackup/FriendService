@@ -21,7 +21,7 @@ namespace ChatMeFriend.Portable.ViewModels
 
         public CharacterViewModel Character
         {
-            get { return friendService.Personality; }
+            get { return friendService.Character; }
         }
     }
 }

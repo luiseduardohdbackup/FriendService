@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ChatMeFriend.Portable.Interfaces;
+﻿using ChatMeFriend.Portable.Interfaces;
 using ChatMeFriend.Portable.ViewModels;
 
 namespace ChatMeFriend.Portable.Services
@@ -23,7 +19,7 @@ namespace ChatMeFriend.Portable.Services
         }
 
         private CharacterViewModel personality;
-        public ViewModels.CharacterViewModel Personality
+        public ViewModels.CharacterViewModel Character
         {
             get
             {

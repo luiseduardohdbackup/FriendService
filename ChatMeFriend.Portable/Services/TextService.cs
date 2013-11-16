@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using ChatMeFriend.Portable.Interfaces;
 using ChatMeFriend.Portable.ViewModels;
 
@@ -10,9 +7,11 @@ namespace ChatMeFriend.Portable.Services
     public class TextService : ITextService
     {
         private IFriendService friendService;
-        public TextService(IFriendService friendService)
+        private IDataService dataService;
+        public TextService(IFriendService friendService, IDataService dataService)
         {
             this.friendService = friendService;
+            this.dataService = dataService;
         }
 
         public string GeneratePeronalityText()
@@ -27,6 +26,8 @@ namespace ChatMeFriend.Portable.Services
             textMessage.Name = friendService.User.Name;
             textMessage.PictureFileName = friendService.User.PictureFileName;
             textMessage.Time = DateTime.UtcNow;
+
+            this.dataService.Insert(textMessage);
 
             return textMessage;
         }
