@@ -2,7 +2,7 @@
 using System.Linq;
 using ChatMeFriend.Portable.Interfaces;
 using ChatMeFriend.Portable.ViewModels;
-using Cirrious.MvvmCross.Plugins.Sqlite;
+using Cirrious.MvvmCross.Community.Plugins.Sqlite;
 
 namespace ChatMeFriend.Portable.Services
 {

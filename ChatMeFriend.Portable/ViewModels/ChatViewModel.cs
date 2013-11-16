@@ -14,6 +14,9 @@ namespace ChatMeFriend.Portable.ViewModels
             this.textService = textService;
         }
 
+
+
+
         private ObservableCollection<TextMessageViewModel> textMessages = new ObservableCollection<TextMessageViewModel>();
 
         public ObservableCollection<TextMessageViewModel> TextMessages

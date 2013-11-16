@@ -1,5 +1,5 @@
 using System;
-using Cirrious.MvvmCross.Plugins.Sqlite;
+using Cirrious.MvvmCross.Community.Plugins.Sqlite;
 using Cirrious.MvvmCross.ViewModels;
 
 namespace ChatMeFriend.Portable.ViewModels
