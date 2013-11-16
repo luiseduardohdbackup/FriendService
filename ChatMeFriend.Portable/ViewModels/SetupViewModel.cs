@@ -1,4 +1,5 @@
-﻿using Cirrious.MvvmCross.ViewModels;
+﻿using ChatMeFriend.Portable.Interfaces;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace ChatMeFriend.Portable.ViewModels
 {
@@ -6,20 +7,21 @@ namespace ChatMeFriend.Portable.ViewModels
         : MvxViewModel
     {
 
-        private UserViewModel user;
-        public UserViewModel User
+        private IFriendService friendService;
+        public SetupViewModel(IFriendService friendService)
         {
-            get { return user; }
-            set { user = value; }
+            this.friendService = friendService;
         }
 
-        private PersonalityViewModel personality;
-
-
-        public PersonalityViewModel Personality
+        public UserViewModel User
         {
-            get { return personality; }
-            set { personality = value; }
+            get { return friendService.User; }
+        }
+
+
+        public CharacterViewModel Personality
+        {
+            get { return friendService.Personality; }
         }
     }
 }

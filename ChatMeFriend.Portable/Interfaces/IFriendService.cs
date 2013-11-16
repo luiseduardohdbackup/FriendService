@@ -9,6 +9,6 @@ namespace ChatMeFriend.Portable.Interfaces
     public interface IFriendService
     {
         UserViewModel User { get; }
-        PersonalityViewModel Personality { get; }
+        CharacterViewModel Personality { get; }
     }
 }

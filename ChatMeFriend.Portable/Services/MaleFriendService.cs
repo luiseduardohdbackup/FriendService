@@ -22,13 +22,13 @@ namespace ChatMeFriend.Portable.Services
             }
         }
 
-        private PersonalityViewModel personality;
-        public ViewModels.PersonalityViewModel Personality
+        private CharacterViewModel personality;
+        public ViewModels.CharacterViewModel Personality
         {
             get
             {
                 if (personality == null)
-                    personality = new PersonalityViewModel(){Gender = GenderType.Male};
+                    personality = new CharacterViewModel(){Gender = GenderType.Male};
 
                 return personality;
             }

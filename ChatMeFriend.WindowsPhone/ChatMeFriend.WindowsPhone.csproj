@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Bootstrap\SettingsBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,6 +169,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ceton.mvx.plugins.settings">
+      <HintPath>..\Common\ceton.mvx.plugins.settings.dll</HintPath>
+    </Reference>
+    <Reference Include="ceton.mvx.plugins.settings.WindowsPhone">
+      <HintPath>..\Common\ceton.mvx.plugins.settings.WindowsPhone.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.CrossCore">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\sl4-wp71\Cirrious.CrossCore.dll</HintPath>
     </Reference>

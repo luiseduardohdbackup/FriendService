@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using ChatMeFriend.Portable.Helpers;
 using Cirrious.MvvmCross.ViewModels;
 
 namespace ChatMeFriend.Portable.ViewModels
@@ -10,18 +7,16 @@ namespace ChatMeFriend.Portable.ViewModels
     {
 
 
-        private string name = string.Empty;
         public string Name
         {
-            get { return name; }
-            set { name = value; RaisePropertyChanged(() => Name); }
+            get { return Settings.UserName; }
+            set { Settings.UserName = value; RaisePropertyChanged(() => Name); }
         }
 
-        private string location = string.Empty;
         public string Location
         {
-            get { return location; }
-            set { location = value; RaisePropertyChanged(() => Location); }
+            get { return Settings.UserLocation; }
+            set { Settings.UserLocation = value; RaisePropertyChanged(() => Location); }
         }
 
 
@@ -33,12 +28,11 @@ namespace ChatMeFriend.Portable.ViewModels
         }
 
 
-        private string pictureFileName;
 
         public string PictureFileName
         {
-            get { return pictureFileName; }
-            set { pictureFileName = value; RaisePropertyChanged(() => PictureFileName); }
+            get { return Settings.UserPicture; }
+            set { Settings.UserPicture = value; RaisePropertyChanged(() => PictureFileName); }
         }
     }
 }
